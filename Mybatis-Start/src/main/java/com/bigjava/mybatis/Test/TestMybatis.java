@@ -1,5 +1,6 @@
 package com.bigjava.mybatis.Test;
 
+import com.bigjava.mybatis.common.SqlSessionFactoryUtils;
 import com.bigjava.mybatis.model.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -19,7 +20,9 @@ import java.util.List;
 public class TestMybatis {
 
     public static void main(String[] args) throws IOException {
-        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
+        //SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-config.xml"));
+        SqlSessionFactory factory= SqlSessionFactoryUtils.getInstance();
+
         SqlSession sqlSession = factory.openSession();
         List<User> userList = sqlSession.selectList("com.bigjava.mybatis.mapper.UserMapper.getUserAll");
         for (User user: userList){

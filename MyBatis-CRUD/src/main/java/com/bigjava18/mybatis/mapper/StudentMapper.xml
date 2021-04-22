@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigjava18.mybatis.mapper.StudentMapper">
+
+    <!--查询所有学生-->
+    <select id="queryStudent" parameterType="int" resultType="com.bigjava18.mybatis.model.Student">
+        select * from student a where a.username=#{username}
+    </select>
+
+    <!--添加学生1-->
+    <insert id="addStudent1" parameterType="com.bigjava18.mybatis.model.Student">
+        insert into student (id,username,password) values(#{id},#{username},#{password})
+    </insert>
+
+    <!--添加学生2-->
+    <!--
+    使用mysql中的uuid()函数为id赋值
+    resultType：返回类型
+    keyProperty：为id赋值
+    order：BEFORE -> 在insert into student (id,username,password) values(#{id},#{username},#{password})执行之前执行
+    -->
+    <insert id="addStudent2" parameterType="com.bigjava18.mybatis.model.Student">
+        <selectKey resultType="java.lang.String" keyProperty="id" order="BEFORE">
+            select uuid()
+        </selectKey>
+        insert into student (id,username,password) values(#{id},#{username},#{password})
+    </insert>
+
+</mapper>

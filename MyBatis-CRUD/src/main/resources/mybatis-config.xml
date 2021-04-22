@@ -16,5 +16,7 @@
     </environments>
     <mappers>
         <mapper resource="com/bigjava18/mybatis/mapper/UserMapper.xml"/>
+        <mapper resource="com/bigjava18/mybatis/mapper/StudentMapper.xml"/>
+        <package name="com.bigjava18.mybatis.mapper"/>
     </mappers>
 </configuration>

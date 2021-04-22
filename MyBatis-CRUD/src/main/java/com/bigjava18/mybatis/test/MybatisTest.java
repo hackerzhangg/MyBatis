@@ -14,6 +14,10 @@ import java.util.List;
  */
 public class MybatisTest {
 
+    /**
+     * 查询所有用户
+     * @param args
+     */
     public static void main(String[] args){
         SqlSessionFactory sqlSessionFactory= SqlSessionFactoryUtils.getInstance();
         SqlSession sqlSession = sqlSessionFactory.openSession();

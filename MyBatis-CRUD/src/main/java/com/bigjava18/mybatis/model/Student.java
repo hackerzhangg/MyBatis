@@ -2,20 +2,19 @@ package com.bigjava18.mybatis.model;
 
 /**
  * @Author zgp
- * @Since 2021 -04 -16 15 :04
- * @Description 用户实体类
+ * @Since 2021 -04 -22 09 :59
+ * @Description 学生实体类
  */
-public class User {
-
-    private Integer id;
+public class Student {
+    private String id;
     private String username;
     private String password;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -37,8 +36,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
+        return "Student{" +
+                "id='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

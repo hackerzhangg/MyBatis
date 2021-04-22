@@ -4,12 +4,28 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bigjava18.mybatis.mapper.UserMapper">
 
+    <!--查询所有用户-->
     <select id="getUserAll" resultType="com.bigjava18.mybatis.model.User">
         select * from user;
     </select>
 
+    <!--添加用户-->
     <insert id="addUser" parameterType="com.bigjava18.mybatis.model.User">
         insert into user (username,password) values(#{username},#{password})
     </insert>
 
+    <!--删除用户-->
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+    <!--更新用户-->
+    <update id="updateUserById" parameterType="com.bigjava18.mybatis.model.User">
+        update user set password=#{password} where id=#{id}
+    </update>
+
+    <!--通过用户的id查询用户-->
+    <select id="selectUserById" parameterType="int" resultType="com.bigjava18.mybatis.model.User">
+        select * from user where id=#{id}
+    </select>
 </mapper>

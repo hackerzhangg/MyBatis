@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigjava18.mybatis.mapper.BookMapper">
+
+    <!--在数据库和实体类字段不一致时，使用resultMap方法定义-->
+    <resultMap id="booKResultMap1" type="com.bigjava18.mybatis.model.Book">
+        <id property="id" column="id"></id>
+        <result property="name" column="b_name"></result>
+        <result property="author" column="author"></result>
+    </resultMap>
+
+    <!--Book默认会调用无参得构造函数，使用constructor会调用对应有参得构造函数-->
+    <resultMap id="booKResultMap2" type="com.bigjava18.mybatis.model.Book">
+        <!--在没有设置@Param注解时用arg0,arg1,arg2-->
+        <!--<constructor>
+            <idArg column="id" name="arg0" javaType="java.lang.Integer" jdbcType="BIGINT"></idArg>
+            <arg column="b_name" name="arg1" javaType="java.lang.String" jdbcType="VARCHAR"></arg>
+            <arg column="author" name="arg2" javaType="java.lang.String" jdbcType="VARCHAR"></arg>
+        </constructor>-->
+
+        <!--在使用了@Param注解时，直接使用对应得名称就可以-->
+        <constructor>
+            <idArg column="id" name="id"></idArg>
+            <arg column="b_name" name="name"></arg>
+            <arg column="author" name="author"></arg>
+        </constructor>
+    </resultMap>
+
+    <!--
+        //在数据库和实体类数据字段对应不一致时，数据会映射不上
+        //处理方案1：为sql设别名 2：使用resultMap
+        select id,author,b_name as name from book
+    -->
+    <!--<select id="getAllBooks" resultMap="booKResultMap1">
+         select * from book;
+    </select>-->
+    <select id="getAllBooks" resultMap="booKResultMap2">
+         select * from book;
+    </select>
+
+</mapper>

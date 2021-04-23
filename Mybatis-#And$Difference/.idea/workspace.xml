@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ad0db31-68a8-40e1-83a9-00868bfaac39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bigjava18/mybatis/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MyBatis-CRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MyBatis-CRUD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mybatis-Start/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mybatis-Start/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="F:\FrameReviewJavaProject\MybatisReview\MybatisReviewProject\MyBatis\Mybatis-#And$Difference\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\m2\repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rVzc8eGiutBwDyHPG0yDodjnRq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\FrameReviewJavaProject\MybatisReview\MybatisReviewProject\MyBatis\Mybatis-#And$Difference\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MyTest.getAllBook">
+    <configuration name="MyTest.addUser3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis-#And$Difference" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bigjava18.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bigjava18.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bigjava18.mybatis.test.MyTest" />
+      <option name="METHOD_NAME" value="addUser3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.addUser4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis-#And$Difference" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bigjava18.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bigjava18.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bigjava18.mybatis.test.MyTest" />
+      <option name="METHOD_NAME" value="addUser4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.getAllBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis-#And$Difference" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bigjava18.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bigjava18.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bigjava18.mybatis.test.MyTest" />
+      <option name="METHOD_NAME" value="getAllBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.getUserCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis-#And$Difference" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bigjava18.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bigjava18.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bigjava18.mybatis.test.MyTest" />
+      <option name="METHOD_NAME" value="getUserCount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.selectUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Mybatis-#And$Difference" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bigjava18.mybatis.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bigjava18.mybatis.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bigjava18.mybatis.test.MyTest" />
+      <option name="METHOD_NAME" value="selectUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyTest.getAllBook" />
+        <item itemvalue="JUnit.MyTest.getUserCount" />
+        <item itemvalue="JUnit.MyTest.selectUser" />
+        <item itemvalue="JUnit.MyTest.addUser4" />
+        <item itemvalue="JUnit.MyTest.addUser3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ad0db31-68a8-40e1-83a9-00868bfaac39" name="Default Changelist" comment="" />
+      <created>1619076121746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619076121746</updated>
+      <workItem from="1619076123250" duration="1801000" />
+      <workItem from="1619077929517" duration="7109000" />
+      <workItem from="1619085655578" duration="43000" />
+      <workItem from="1619140432619" duration="6790000" />
+      <workItem from="1619147423880" duration="1165000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser" timestamp="1619143670972">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="574" y="111" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1619143670972" />
+    <state x="549" y="176" key="FileChooserDialogImpl" timestamp="1619076154285">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="176" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1619076154285" />
+    <state width="1493" height="676" key="GridCell.Tab.0.bottom" timestamp="1619148550322">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1619148550322" />
+    <state width="1493" height="676" key="GridCell.Tab.0.center" timestamp="1619148550321">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1619148550321" />
+    <state width="1493" height="676" key="GridCell.Tab.0.left" timestamp="1619148550321">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1619148550321" />
+    <state width="1493" height="676" key="GridCell.Tab.0.right" timestamp="1619148550321">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1619148550321" />
+    <state width="1493" height="676" key="GridCell.Tab.1.bottom" timestamp="1619148550322">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1619148550322" />
+    <state width="1493" height="676" key="GridCell.Tab.1.center" timestamp="1619148550322">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1619148550322" />
+    <state width="1493" height="676" key="GridCell.Tab.1.left" timestamp="1619148550322">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1619148550322" />
+    <state width="1493" height="676" key="GridCell.Tab.1.right" timestamp="1619148550322">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="676" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1619148550322" />
+    <state x="272" y="63" key="SettingsEditor" timestamp="1619076161730">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="272" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1619076161730" />
+    <state x="457" y="172" width="786" height="490" key="find.popup" timestamp="1619147815854">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="457" y="172" width="786" height="490" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1619147815854" />
+    <state x="425" y="189" key="run.anything.popup" timestamp="1619147153486">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1619147153486" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1619146459817">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1619146459817" />
+  </component>
+</project>

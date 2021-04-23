@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigjava18.mybatis.mapper.UserMapper">
+
+    <!--查询所有用户-->
+    <select id="queryAllUser" resultType="com.bigjava18.mybatis.model.User">
+        select * from user;
+    </select>
+
+    <select id="getUserById" resultType="com.bigjava18.mybatis.model.User">
+        select * from user where id=${id}
+    </select>
+
+    <select id="getUserOrderBy" resultType="com.bigjava18.mybatis.model.User" parameterType="int">
+        select * from user order by ${id} desc
+    </select>
+
+    <!--
+        mybatis中2种模糊查询得使用方法
+        方法一：select * from user where username like '%${username}%'
+        方法二：
+    -->
+    <select id="getUsernameByLike" parameterType="java.lang.String" resultType="com.bigjava18.mybatis.model.User">
+        select * from user where username like concat('%',#{username},'%')
+    </select>
+
+    <!--
+        通过id，修改用户名，多参数传递
+    -->
+    <update id="updateUsernameById">
+        update user set username=#{username} where id=#{id}
+    </update>
+
+    <!--用户添加方式1-->
+    <insert id="addUser1" parameterType="com.bigjava18.mybatis.model.User">
+        insert into user (username,password) values (#{username},#{password})
+    </insert>
+
+    <!--用户添加方式2-->
+    <insert id="addUser2" parameterType="com.bigjava18.mybatis.model.User">
+        insert into user (username,password) values (#{user.username},#{user.password})
+    </insert>
+
+    <!--用户添加方式3-->
+    <insert id="addUser3" parameterType="java.util.HashMap">
+        insert into user (username,password) values (#{username},#{password})
+    </insert>
+
+    <!--
+        主键回填
+        由于添加user得时候没有设置id值 , 数据库中得id主键自动增长，现在要直接获取用户插入数据后所对应得id值
+        方法一
+        <insert id="addUser4" parameterType="com.bigjava18.mybatis.model.User" useGeneratedKeys="true" keyProperty="id">
+            insert into user (username,password) values (#{username},#{password})
+        </insert>
+        方法二
+        <insert id="addUser4" parameterType="com.bigjava18.mybatis.model.User">
+            <selectKey keyProperty="id" resultType="java.lang.String" order="AFTER">
+                select last_insert_id();
+            </selectKey>
+                insert into user (username,password) values (#{username},#{password})
+        </insert>
+    -->
+    <insert id="addUser4" parameterType="com.bigjava18.mybatis.model.User">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        insert into user (username,password) values (#{username},#{password})
+    </insert>
+
+    <!--查询所有用户，resultType返回map-->
+    <select id="selectUser" resultType="java.util.HashMap">
+        select * from user;
+    </select>
+
+    <!--查询用户总数-->
+    <select id="getUserCount" resultType="java.lang.Long">
+        select count(*) from user;
+    </select>
+
+</mapper>

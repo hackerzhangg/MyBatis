@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigjava18.mybatis.mapper.BookMapper">
+
+    <resultMap id="getAllBookResultMap" type="com.bigjava18.mybatis.model.Book">
+        <id property="id" column="id"></id>
+        <result property="author" column="author"></result>
+        <result property="name" column="b_name"></result>
+    </resultMap>
+
+    <select id="getAllBook" resultMap="getAllBookResultMap">
+        select * from book;
+    </select>
+
+    <select id="getAllBookPage" resultMap="getAllBookResultMap">
+        select * from book
+        <if test="start !=null and page !=null">
+            limit #{start},#{page}
+        </if>
+    </select>
+
+    <!--
+        关于动态sql：where 1=1优化 使用where优化
+        <choose>
+            <when test="name !=null and name !=''">
+                and b_name=#{name}
+            </when>
+            <when test="author !=null and author !=''">
+                and author=#{author}
+            </when>
+            <otherwise>
+
+            </otherwise>
+        </choose>
+        优化后
+        select * from book
+        <where>
+            <choose>
+                <when test="name !=null and name !=''">
+                    and b_name=#{name}
+                </when>
+                <when test="author !=null and author !=''">
+                    and author=#{author}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+        </where>
+    -->
+    <select id="getBookNameOrAuthor" resultMap="getAllBookResultMap">
+        <!--select * from book where 1=1
+        <choose>
+            <when test="name !=null and name !=''">
+                and b_name=#{name}
+            </when>
+            <when test="author !=null and author !=''">
+                and author=#{author}
+            </when>
+            <otherwise>
+
+            </otherwise>
+        </choose>-->
+
+        select * from book
+        <where>
+            <choose>
+                <when test="name !=null and name !=''">
+                    and b_name=#{name}
+                </when>
+                <when test="author !=null and author !=''">
+                    and author=#{author}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <!--
+        使用set标签动态更新数据
+    -->
+    <update id="updateBook" parameterType="com.bigjava18.mybatis.model.Book">
+        update book
+        <set>
+            <if test="name !=null and name !=''">
+                b_name=#{name},
+            </if>
+            <if test="author !=null and author !=''">
+                author=#{author},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--使用trim代替set更新-->
+    <update id="updateBook1" parameterType="com.bigjava18.mybatis.model.Book">
+        update book
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name !=null and name !=''">
+                b_name=#{name},
+            </if>
+            <if test="author !=null and author !=''">
+                author=#{author},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+
+    <!--使用trim代替where查询-->
+    <select id="getBookNameOrAuthor1" resultMap="getAllBookResultMap">
+        select * from book
+        <trim prefix="where" prefixOverrides="and ">
+            <choose>
+                <when test="name !=null and name !=''">
+                    and b_name=#{name}
+                </when>
+                <when test="author !=null and author !=''">
+                    and author=#{author}
+                </when>
+                <otherwise>
+
+                </otherwise>
+            </choose>
+        </trim>
+    </select>
+
+    <!--使用foreach查询数据-->
+    <select id="getBooksByIds" resultMap="getAllBookResultMap">
+        select * from book where id in 
+        <foreach collection="ids" open="(" close=")" item="id" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+    <!--使用foreach批量插入数据-->
+    <insert id="batchBooks">
+        insert into book (b_name,author) values
+        <foreach collection="bookList" separator="," item="books">
+            (#{books.name},#{books.author})
+        </foreach>
+    </insert>
+    
+    <!--使用foreach更新数据-->
+    <update id="updateBook2">
+        update book
+        <set>
+            <foreach collection="map" index="key" item="val" separator=",">
+                ${key}=#{val}
+            </foreach>
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--通过bind 为模糊查询配置变量，方便在Oracle and Mysql 之间切换-->
+    <select id="getBooksByAuthorFirstName" resultMap="getAllBookResultMap">
+        <bind name="authorLike" value="author+'%'"/>
+        select * from book where author like #{authorLike}
+    </select>
+
+</mapper>

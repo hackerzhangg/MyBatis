@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigjava18.mybatis.mapper.UserMapper">
+    
+    <resultMap id="BaseMap" type="com.bigjava18.mybatis.model.T_User">
+        <id property="id" column="id"></id>
+        <result property="password" column="password"></result>
+        <result property="username" column="username"></result>
+    </resultMap>
+
+    <resultMap id="AllUserWithRole" type="com.bigjava18.mybatis.model.T_User" extends="BaseMap">
+        <collection property="roles" ofType="com.bigjava18.mybatis.model.T_Role" columnPrefix="role_" resultMap="com.bigjava18.mybatis.mapper.RoleMapper.BaseRoleMap">
+        </collection>
+    </resultMap>
+
+    <!--
+        select * from t_user tu,t_role tr,user_role ur where tu.id=ur.uid and tr.id=ur.rid;
+        select tu.*,tr.id as role_id,tr.name as role_name from t_user tu left join user_role ur on tu.id=ur.uid left join t_role tr on tr.id=ur.rid;
+    -->
+    <select id="getAllUserWithRole" resultMap="AllUserWithRole">
+        select tu.*,tr.id as role_id,tr.name as role_name from t_user tu left join user_role ur on tu.id=ur.uid left join t_role tr on tr.id=ur.rid
+    </select>
+    
+</mapper>
